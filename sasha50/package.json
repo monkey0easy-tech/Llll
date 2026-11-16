@@ -1,0 +1,28 @@
+{
+  "name": "sasha50",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated music video for Sasha's 50th birthday",
+  "scripts": {
+    "postinstall": "node scripts/sync-audio.mjs",
+    "sync-audio": "node scripts/sync-audio.mjs",
+    "dev": "npm run sync-audio && remotion studio",
+    "studio": "npm run sync-audio && remotion studio",
+    "render": "npm run sync-audio && remotion render Sasha50 out/sasha50.mp4 --codec=h264",
+    "render:test": "npm run sync-audio && remotion render Sasha50 out/sasha50_test.mp4 --codec=h264 --scale=0.5",
+    "still": "remotion still",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.544",
+    "@remotion/google-fonts": "4.0.544",
+    "@remotion/media-utils": "4.0.544",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "typescript": "5.8.3"
+  }
+}
